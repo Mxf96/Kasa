@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/pages/Home.scss";
 import bannerImg from "../assets/img/_Section 1.png";
 
@@ -13,12 +14,24 @@ const Home = () => {
 
       {/* Grille de logements */}
       <section className="home__grid">
-        <div className="card">Titre de la location</div>
-        <div className="card">Titre de la location</div>
-        <div className="card">Titre de la location</div>
-        <div className="card">Titre de la location</div>
-        <div className="card">Titre de la location</div>
-        <div className="card">Titre de la location</div>
+        <Link to="/logement" className="card">
+          Titre de la location
+        </Link>
+        <Link to="/logement" className="card">
+          Titre de la location
+        </Link>
+        <Link to="/logement" className="card">
+          Titre de la location
+        </Link>
+        <Link to="/logement" className="card">
+          Titre de la location
+        </Link>
+        <Link to="/logement" className="card">
+          Titre de la location
+        </Link>
+        <Link to="/logement" className="card">
+          Titre de la location
+        </Link>
       </section>
     </div>
   );

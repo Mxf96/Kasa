@@ -1,0 +1,141 @@
+.logement {
+  margin: 24px 100px;
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+    margin-top: 24px;
+  }
+
+  &__title {
+    font-size: 32px;
+    color: #ff6060;
+    margin: 0 0 8px 0;
+  }
+
+  &__location {
+    margin: 0 0 16px 0;
+    color: #7a7a7a;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    .tag {
+      background: #ff6060;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  &__right {
+    display: grid;
+    gap: 16px;
+    justify-items: end;
+  }
+
+  .host {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &__name {
+      text-align: right;
+      color: #7a7a7a;
+      font-weight: 600;
+      max-width: 120px;
+      line-height: 1.2;
+    }
+
+    &__avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: #cfcfcf;
+    }
+  }
+
+  .rating {
+    .star {
+      font-size: 22px;
+      color: #e3e3e3;
+      &.is-on {
+        color: #ff6060;
+      }
+    }
+  }
+
+  &__collapses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+
+    .equip-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      li {
+        margin: 4px 0;
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .logement {
+    margin: 20px 60px;
+
+    &__title {
+      font-size: 28px;
+    }
+    .host__avatar {
+      width: 44px;
+      height: 44px;
+    }
+    .rating .star {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .logement {
+    margin: 16px;
+
+    &__top {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    &__right {
+      justify-items: start;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+    &__collapses {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .host__name {
+      max-width: none;
+    }
+    .host__avatar {
+      width: 40px;
+      height: 40px;
+    }
+    .rating .star {
+      font-size: 18px;
+    }
+  }
+}

@@ -50,7 +50,7 @@
 }
 
 /* Tablet ≤ 1024px */
-@media (max-width: 1024px) {
+@media (max-width: 1250px) {
   .home {
     &__banner {
       margin: 16px 60px;
@@ -80,7 +80,7 @@
 }
 
 /* Mobile ≤ 640px */
-@media (max-width: 640px) {
+@media (max-width: 700px) {
   .home {
     &__banner {
       margin: 12px 16px;
