@@ -1,0 +1,4 @@
+npm create vite@latest kasa -- --template react
+npm install react-router-dom
+npm install sass
+npm run dev
