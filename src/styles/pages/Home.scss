@@ -35,16 +35,37 @@
     margin: 40px 100px;
 
     .card {
-      background: linear-gradient(to top, #ff6060, #ff8080);
+      position: relative;
       border-radius: 10px;
-      color: white;
-      font-weight: 500;
-      display: flex;
-      align-items: flex-end;
-      padding: 15px;
       height: 250px;
       cursor: pointer;
-      font-size: 14px;
+      text-decoration: none;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+
+      /* Assombrir un peu l’image pour la lisibilité du texte */
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0)
+        );
+      }
+
+      &__title {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+        z-index: 1;
+      }
     }
   }
 }

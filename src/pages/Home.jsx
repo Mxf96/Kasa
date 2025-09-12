@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import data from "../data/locations.json";
 import "../styles/pages/Home.scss";
 import bannerImg from "../assets/img/_Section 1.png";
 
@@ -14,24 +15,16 @@ const Home = () => {
 
       {/* Grille de logements */}
       <section className="home__grid">
-        <Link to="/logement" className="card">
-          Titre de la location
-        </Link>
-        <Link to="/logement" className="card">
-          Titre de la location
-        </Link>
-        <Link to="/logement" className="card">
-          Titre de la location
-        </Link>
-        <Link to="/logement" className="card">
-          Titre de la location
-        </Link>
-        <Link to="/logement" className="card">
-          Titre de la location
-        </Link>
-        <Link to="/logement" className="card">
-          Titre de la location
-        </Link>
+        {data.map(({ id, title, cover }) => (
+          <Link
+            key={id}
+            to={`/logement/${id}`}
+            className="card"
+            style={{ backgroundImage: `url(${cover})` }}
+          >
+            <span className="card__title">{title}</span>
+          </Link>
+        ))}
       </section>
     </div>
   );

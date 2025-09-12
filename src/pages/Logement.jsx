@@ -1,35 +1,33 @@
+import { useParams, Navigate } from "react-router-dom";
+import data from "../data/locations.json";
 import "../styles/pages/Logement.scss";
 import Carousel from "../components/Carousel";
 import Collapse from "../components/Collapse";
 
-const listing = {
-  title: "Cozy loft on the Canal Saint-Martin",
-  location: "Paris, Île-de-France",
-  tags: ["Cozy", "Canal", "Paris 10"],
-  host: { name: "Alexandre Dumas", picture: null },
-  rating: 4,
-  description:
-    "Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l’été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d’affaires. Vous êtes à 7 minutes à pied de la gare de l’est.",
-  equipments: [
-    "Climatisation",
-    "Wi-Fi",
-    "Cuisine",
-    "Espace de travail",
-    "Fer à repasser",
-    "Sèche-cheveux",
-    "Cintres",
-  ],
-  // le Carousel.jsx charge déjà l'image par défaut, mais faire un tableau ici :
-  // pictures: [img1, img2, img3, img4]
-};
-
 function Logement() {
-  const { title, location, tags, host, rating, description, equipments } =
-    listing;
+  const { id } = useParams();
+  const listing = data.find((item) => item.id === id);
+
+  // si l'id n'existe pas -> 404
+  if (!listing) return <Navigate to="*" replace />;
+
+  const {
+    title,
+    location,
+    tags,
+    host,
+    rating,
+    description,
+    equipments,
+    pictures,
+    cover,
+  } = listing;
+
+  const pics = pictures && pictures.length ? pictures : cover ? [cover] : [];
 
   return (
     <div className="logement">
-      <Carousel />
+      <Carousel images={pics} />
 
       <div className="logement__top">
         <div className="logement__left">
@@ -37,7 +35,7 @@ function Logement() {
           <p className="logement__location">{location}</p>
 
           <div className="logement__tags">
-            {tags.map((t) => (
+            {tags?.map((t) => (
               <span key={t} className="tag">
                 {t}
               </span>
@@ -47,13 +45,24 @@ function Logement() {
 
         <div className="logement__right">
           <div className="host">
-            <span className="host__name">{host.name}</span>
-            <div className="host__avatar" aria-hidden />
+            <span className="host__name">{host?.name}</span>
+            {host?.picture ? (
+              <img
+                src={host.picture}
+                alt={host.name}
+                className="host__avatar"
+              />
+            ) : (
+              <div className="host__avatar" aria-hidden />
+            )}
           </div>
 
           <div className="rating" aria-label={`Note ${rating} sur 5`}>
             {[1, 2, 3, 4, 5].map((i) => (
-              <span key={i} className={`star ${i <= rating ? "is-on" : ""}`}>
+              <span
+                key={i}
+                className={`star ${i <= parseInt(rating, 10) ? "is-on" : ""}`}
+              >
                 ★
               </span>
             ))}
@@ -66,7 +75,7 @@ function Logement() {
 
         <Collapse title="Équipements">
           <ul className="equip-list">
-            {equipments.map((e) => (
+            {equipments?.map((e) => (
               <li key={e}>{e}</li>
             ))}
           </ul>
