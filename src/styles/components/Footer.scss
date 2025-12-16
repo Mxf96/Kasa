@@ -5,22 +5,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 80px 20px 10px;
   gap: 20px;
 
   &__logo {
-    height: 30px;
+    height: 39px;
   }
 
   &__text {
-    font-size: 18px;
+    font-size: 24px;
+
+    .break {
+      display: inline;
+    }
   }
 }
 
 /* Tablet ≤ 1024px */
 @media (max-width: 1024px) {
   .footer {
-    padding: 32px 16px;
+    padding: 60px 16px 10px;
     gap: 16px;
 
     &__logo {
@@ -36,15 +40,21 @@
 /* Mobile ≤ 640px */
 @media (max-width: 640px) {
   .footer {
-    padding: 24px 12px;
+    padding: 60px 12px;
     gap: 12px;
+    margin-top: -10px;
 
     &__logo {
-      height: 24px;
+      height: 35px;
+      margin-bottom: -15px;
     }
 
     &__text {
-      font-size: 14px;
+      font-size: 12px;
+
+      .break {
+        display: block;
+      }
     }
   }
 }

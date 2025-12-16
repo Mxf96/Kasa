@@ -10,7 +10,9 @@ const Home = () => {
       {/* Bannière */}
       <section className="home__banner">
         <img src={bannerImg} alt="Bannière" className="home__banner-img" />
-        <h1 className="home__banner-text">Chez vous, partout et ailleurs</h1>
+        <h1 className="home__banner-text">
+          Chez vous, <span className="break">partout et ailleurs</span>
+        </h1>
       </section>
 
       {/* Grille de logements */}

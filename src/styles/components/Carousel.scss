@@ -1,7 +1,9 @@
 .carousel {
   position: relative;
-  height: 360px;
-  border-radius: 16px;
+  max-width: 1250px;
+  margin: auto;
+  height: 415px;
+  border-radius: 25px;
   overflow: hidden;
 
   &__img {
@@ -12,15 +14,15 @@
 
   &__btn {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     border: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: none;
     color: #fff;
     width: 44px;
     height: 44px;
     border-radius: 999px;
-    font-size: 28px;
+    font-size: 120px;
     line-height: 1;
     cursor: pointer;
     user-select: none;
@@ -52,7 +54,18 @@
   .carousel__btn {
     width: 40px;
     height: 40px;
-    font-size: 24px;
+    font-size: 80px;
+    top: 45%;
+
+    &--prev {
+      left: 5px;
+    }
+    &--next {
+      right: 5px;
+    }
+  }
+  .carousel__count {
+    display: none;
   }
 }
 @media (max-width: 640px) {
@@ -62,6 +75,16 @@
   .carousel__btn {
     width: 36px;
     height: 36px;
-    font-size: 22px;
+    font-size: 40px;
+
+    &--prev {
+      left: 0px;
+    }
+    &--next {
+      right: 0px;
+    }
+  }
+  .carousel__count {
+    display: none;
   }
 }

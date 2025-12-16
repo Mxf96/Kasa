@@ -45,7 +45,10 @@ function Logement() {
 
         <div className="logement__right">
           <div className="host">
-            <span className="host__name">{host?.name}</span>
+            <div className="host__name">
+              <span>{host?.name?.split(" ")[0]}</span>
+              <span>{host?.name?.split(" ")[1]}</span>
+            </div>
             {host?.picture ? (
               <img
                 src={host.picture}
@@ -61,9 +64,17 @@ function Logement() {
             {[1, 2, 3, 4, 5].map((i) => (
               <span
                 key={i}
-                className={`star ${i <= parseInt(rating, 10) ? "is-on" : ""}`}
+                className={`star ${i <= rating ? "is-on" : ""}`}
+                aria-hidden="true"
               >
-                ★
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 3.1c.3 0 .6.2.7.5l2.3 4.6 5.1.7c.3 0 .6.3.6.6 0 .2-.1.4-.3.6l-3.7 3.6.9 5.1c0 .3-.1.6-.4.7-.2.1-.5.1-.7 0L12 17.8l-4.5 2.4c-.2.1-.5.1-.7 0-.3-.1-.4-.4-.4-.7l.9-5.1-3.7-3.6c-.2-.2-.3-.4-.3-.6 0-.3.3-.6.6-.6l5.1-.7 2.3-4.6c.1-.3.4-.5.7-.5z" />
+                </svg>
               </span>
             ))}
           </div>

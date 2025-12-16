@@ -41,8 +41,8 @@ function Collapse({ title, children, defaultOpen = false }) {
         {/* Chevron SVG inline */}
         <svg
           className="collapse__chevron"
-          width="20"
-          height="20"
+          width="32"
+          height="32"
           viewBox="0 0 24 24"
           aria-hidden="true"
         >

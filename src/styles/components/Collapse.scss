@@ -11,12 +11,13 @@
     gap: 12px;
     background: #ff6060;
     color: #fff;
-    padding: 14px 16px;
+    padding: 10px 16px;
     border: 0;
     cursor: pointer;
     text-align: left;
-    border-radius: 6px;
+    border-radius: 10px;
     transition: background 0.2s ease;
+    margin-bottom: 20px;
 
     &:hover {
       background: #ff6f6f;
@@ -31,7 +32,7 @@
   &__chevron {
     flex: 0 0 auto;
     color: #fff;
-    transform: rotate(0deg);
+    transform: rotate(180deg);
     transition: transform 0.25s ease;
   }
 
@@ -45,7 +46,7 @@
   }
 
   &__inner {
-    padding: 16px;
+    padding: 18px;
     font-size: 16px;
     color: #333;
     line-height: 1.5;
@@ -54,7 +55,7 @@
   /* État ouvert */
   &.is-open {
     .collapse__chevron {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
   }
 }
@@ -77,6 +78,13 @@
 
 @media (max-width: 640px) {
   .collapse {
+    margin: 4px 0;
+
+    &__header {
+      margin-bottom: 6px;
+      padding: 10px 12px;
+      border-radius: 5px;
+    }
     &__title {
       font-size: 15px;
     }

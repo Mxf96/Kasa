@@ -1,5 +1,6 @@
 .logement {
-  margin: 24px 100px;
+  max-width: 1250px;
+  margin: auto;
 
   &__top {
     display: grid;
@@ -10,14 +11,16 @@
   }
 
   &__title {
-    font-size: 32px;
+    font-size: 36px;
     color: #ff6060;
     margin: 0 0 8px 0;
   }
 
   &__location {
+    font-size: 18px;
     margin: 0 0 16px 0;
-    color: #7a7a7a;
+    color: #000;
+    font-weight: 500;
   }
 
   &__tags {
@@ -27,8 +30,8 @@
     .tag {
       background: #ff6060;
       color: #fff;
-      padding: 6px 14px;
-      border-radius: 12px;
+      padding: 6px 20px;
+      border-radius: 8px;
       font-size: 12px;
       font-weight: 600;
     }
@@ -46,25 +49,37 @@
     gap: 12px;
 
     &__name {
+      display: flex;
+      flex-direction: column;
       text-align: right;
-      color: #7a7a7a;
+      color: #ff6060;
       font-weight: 600;
       max-width: 120px;
       line-height: 1.2;
+      font-size: 18px;
     }
 
     &__avatar {
-      width: 48px;
-      height: 48px;
+      width: 64px;
+      height: 64px;
       border-radius: 999px;
       background: #cfcfcf;
     }
   }
 
   .rating {
+    display: flex;
+    gap: 6px;
+
     .star {
-      font-size: 22px;
       color: #e3e3e3;
+
+      svg {
+        width: 36px;
+        height: 36px;
+        display: block;
+      }
+      
       &.is-on {
         color: #ff6060;
       }
@@ -75,7 +90,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    margin-top: 24px;
+    margin-top: 5px;
 
     .equip-list {
       list-style: none;
@@ -116,26 +131,48 @@
     }
 
     &__right {
-      justify-items: start;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .host {
+      order: 2;
+    }
+
+    .rating {
+      order: 1;
+      gap: 2px;
+
+      .star svg {
+        width: 18px;
+        height: 18px;
+      }
     }
 
     &__title {
       font-size: 22px;
     }
+
+    &__tags {
+      .tag {
+        font-size: 8px;
+      }
+    }
+
     &__collapses {
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 5px;
     }
 
     .host__name {
       max-width: none;
     }
+
     .host__avatar {
       width: 40px;
       height: 40px;
-    }
-    .rating .star {
-      font-size: 18px;
     }
   }
 }

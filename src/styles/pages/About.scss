@@ -1,10 +1,14 @@
 .about {
+  max-width: 1440px;
+  margin: auto;
+
   &__banner {
     margin: 20px 100px;
     border-radius: 15px;
     overflow: hidden;
 
     &-img {
+      display: block;
       width: 100%;
       height: 200px;
       object-fit: cover;
@@ -13,7 +17,19 @@
   }
 
   &__content {
-    margin: 40px 100px;
+    margin: 40px auto;
+    width: 70%;
+
+    .collapse {
+      &__header {
+        border-radius: 5px;
+      }
+
+      .collapse__title {
+        font-size: 24px;
+        line-height: 1.6;
+      }
+    }
   }
 }
 
@@ -29,7 +45,8 @@
     }
 
     &__content {
-      margin: 32px 60px;
+      margin: 32px auto;
+      width: 75%;
     }
   }
 }
@@ -45,7 +62,18 @@
     }
 
     &__content {
-      margin: 20px 16px;
+      margin: 20px auto;
+      width: 90%;
+
+      .collapse {
+        &__header {
+          padding: 5px;
+          margin-bottom: 15px;
+        }
+        .collapse__title {
+          font-size: 13px;
+        }
+      }
     }
   }
 }
